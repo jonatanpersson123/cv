@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <HeaderLine></HeaderLine>
     <router-view/>
   </div>
 </template>
 
 <script>
+import HeaderLine from './components/HeaderLine'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HeaderLine
+  }
 }
 </script>
 
