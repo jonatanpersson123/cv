@@ -11,7 +11,7 @@
 <style scoped>
     #header-line {
         height: 8px;
-        background: #FA7268;
+        background: var(--dark, gray);
         position: absolute;
         top: 0;
         left: 0;

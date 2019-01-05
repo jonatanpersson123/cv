@@ -16,12 +16,19 @@ export default {
 </script>
 
 <style>
+html {
+  /* TODO - Extract to variables */
+  background: lightgray;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  --dark: #363636;
+
 }
+
+.flex {
+  display: flex;
+}
+
 </style>
