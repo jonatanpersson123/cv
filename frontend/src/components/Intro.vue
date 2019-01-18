@@ -7,7 +7,10 @@
                 <h2>Software developer</h2>
                 <icon-button-list :buttonList="buttonList"></icon-button-list>
             </div>
-            <p id="intro-description">Nice to meet you traveller! I would have shook your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in UX. Currently located in soutern part of Sweden.</p>
+            <div>
+                <p class="intro-description">Nice to meet you traveller! I would have shook your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in UX.</p>
+                <p class="intro-description bottom">Currently located in soutern part of Sweden.</p>
+            </div>
         </div>
     </section>
 </template>
@@ -24,9 +27,9 @@ export default {
     data() {
         return {
             buttonList: [
-                { icon: 'envelope', text: 'Email', link: '' },
-                { icon: 'phone', text: 'Phone', link: '' },
-                { icon: 'github', text: 'Github', link: '' }
+                { icon: 'regular/envelope', text: 'Email', link: '' },
+                { icon: 'phone', text: 'Phone', link: '', scale: 1.5 },
+                { icon: 'brands/github', text: 'Github', link: '', scale: 2 }
             ]
         }
     }
@@ -50,9 +53,10 @@ h2 {
     margin: 0;
 }
 
-#intro-description {
+.intro-description {
     margin: 0;
-    max-width: 380px;
+    font-size: 18px;
+    max-width: 550px;
 }
 
 .intro-content {
@@ -60,5 +64,9 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.bottom {
+    margin-top: 20px;
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
+  <v-app>
   <div id="app">
     <cv></cv>
   </div>
+  </v-app>
 </template>
 
 <script>
@@ -15,10 +17,6 @@ export default {
 </script>
 
 <style>
-html {
-  /* TODO - Extract to variables */
-  background: lightgray;
-}
 
 body {
     height: 100vh;
@@ -39,6 +37,8 @@ body {
   height: 100%;
   width: 100%;
   --dark: #363636;
+  background: lightgray;
+
 }
 
 .flex {

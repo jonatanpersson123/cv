@@ -33,5 +33,6 @@ import Intro from './Intro'
     bottom: 0;
     right: 0;
     left: 0;
+    box-shadow: 0 15px 30px hsla(0,0%,0%,.2);
 }
 </style>
