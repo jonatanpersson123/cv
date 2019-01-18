@@ -1,25 +1,37 @@
 <template>
-    <div id="content">
-        <header-row></header-row>
-        <panels></panels>
+    <div>
+        <div id="content">
+            <navbar></navbar>
+            <Intro></Intro>
+        <!-- <experience></experience>
+        <education></education>
+        <skills></skills> -->
+        </div>
     </div>
 </template>
 
 <script>
-    import HeaderRow from './HeaderRow'
-    import Panels from './Panels'
+import Navbar from './Navbar'
+import Intro from './Intro'
     export default {
         name: 'CV',
         components: {
-            HeaderRow,
-            Panels
+            Intro,
+            Navbar
         }
     }
 </script>
 
 <style scoped>
-    #content {
-        max-width: 1076px;
-        margin: 64px auto;
-    }
+#content {
+    background: white;
+    max-width: 1200px;
+    height: 700px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 </style>
