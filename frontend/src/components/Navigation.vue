@@ -1,17 +1,21 @@
 <template>
     <div class="navigator">
         <div id="prev-container" class="prev">
-            <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle"></navigation-button>
+            <v-scroll-x-transition>
+                <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle" @click.native="goToPrev()"></navigation-button>
+            </v-scroll-x-transition>
         </div>
         <nav>
             <ul>
-                <li v-for="chapter in this.chapters" :key="chapter.id" @click="updateCurrentChapter(chapter.id)"
-                  :class="{active: chapter.id === currentChapter.id}">{{chapter.chapterNumber}}</li>
+                <li v-for="chapter in this.chapters" :key="chapter.id" @click="updateCurrentChapter(chapter)"
+                  :class="{active: chapter === currentChapter}">{{chapter.chapterNumber}}</li>
             </ul>
-            <div id="chapter-line"></div>
+            <div ref="line" id="chapter-line"></div>
         </nav>
         <div id="next-container" class="next">
-            <navigation-button v-if="nextChapter" :isNext="true" :chapterText="nextChapter.chapterTitle"></navigation-button>
+            <v-scroll-x-transition>
+                <navigation-button v-if="nextChapter" :isNext="true" :chapterText="nextChapter.chapterTitle" @click.native="goToNext()"></navigation-button>
+            </v-scroll-x-transition>
         </div>
     </div>
 </template>
@@ -36,21 +40,33 @@ export default {
         ]),
         prevChapter() {
             return this.currentChapter !== this.chapters[0]
-                ? this.chapters[this.chapters.indexOf(this.currentChapter) - 1]
+                ? this.chapters[this.getChapterPosition(this.currentChapter) - 1]
                 : null
         },
         nextChapter() {
             return this.currentChapter !== this.chapters[this.chapters.length - 1]
-                ? this.chapters[this.chapters.indexOf(this.currentChapter) + 1]
+                ? this.chapters[this.getChapterPosition(this.currentChapter) + 1]
                 : null
         }
     },
     methods: {
-        ...mapMutations(['updateCurrentChapter'])
+        ...mapMutations(['updateCurrentChapter']),
+        goToNext() {
+            this.updateCurrentChapter(this.nextChapter)
+        },
+        goToPrev() {
+            this.updateCurrentChapter(this.prevChapter)
+        },
+        gotoPage(chapter) {
+            this.updateCurrentChapter(chapter)
+        },
+        getChapterPosition(chapter) {
+            return this.chapters.indexOf(chapter)
+        }
     },
     watch: {
         currentChapter: function (newChapter, oldChapter) {
-            document.getElementById('chapter-line').style.top = (newChapter.id - 1) * 53 + 'px'
+            this.$refs.line.style.top = this.getChapterPosition(newChapter) * 53 + 'px'
         }
     }
 }

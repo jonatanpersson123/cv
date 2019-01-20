@@ -20,8 +20,8 @@ const initStore = () =>
         currentChapter: chapters[0]
     },
     mutations: {
-      updateCurrentChapter(state, newChapterValue) {
-        state.currentChapter = chapters[newChapterValue - 1]
+      updateCurrentChapter(state, newChapter) {
+        state.currentChapter = newChapter
       }
     },
 
