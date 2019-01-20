@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="content">
-            <navbar></navbar>
+            <navigation></navigation>
             <Intro></Intro>
         <!-- <experience></experience>
         <education></education>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import Navbar from './Navbar'
+import Navigation from './Navigation'
 import Intro from './Intro'
     export default {
         name: 'CV',
         components: {
             Intro,
-            Navbar
+            Navigation
         }
     }
 </script>
