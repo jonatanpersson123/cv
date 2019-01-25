@@ -5,13 +5,18 @@
                 <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle" @click.native="goToPrev()"></navigation-button>
             </v-scroll-x-transition>
         </div>
+
         <nav>
             <ul>
-                <li v-for="chapter in this.chapters" :key="chapter.id" @click="updateCurrentChapter(chapter)"
-                  :class="{active: chapter === currentChapter}">{{chapter.chapterNumber}}</li>
+                <li v-for="chapter in this.chapters" :key="chapter.id"
+                    :class="{active: chapter === currentChapter}"
+                    @click="updateCurrentChapter(chapter)">
+                    {{chapter.chapterNumber}}
+                </li>
             </ul>
             <div ref="line" id="chapter-line"></div>
         </nav>
+
         <div id="next-container" class="next">
             <v-scroll-x-transition>
                 <navigation-button v-if="nextChapter" :isNext="true" :chapterText="nextChapter.chapterTitle" @click.native="goToNext()"></navigation-button>
@@ -92,6 +97,15 @@ nav {
     justify-content: flex-start;
 }
 
+#chapter-line {
+    height: 45px;
+    width: 4px;
+    background: var(--dark, black);
+    position: absolute;
+    top: 0;
+    transition: top .5s cubic-bezier(0.250, 0.000, 0.150, 1.000);
+}
+
 .navigator {
     position: absolute;
     right: 36px;
@@ -116,25 +130,18 @@ li {
     font-size: 20px;
     color: lightslategray;
     cursor: pointer;
-    transition: font-size 1s cubic-bezier(0.250, 0.000, 0.150, 1.000), padding-right 1s cubic-bezier(0.250, 0.000, 0.150, 1.000);
+    line-height: 30px;
+    transition: font-size .5s, padding-right .5s;
 }
 
 li.active {
     color: var(--dark, black);
     font-size: 30px;
+    line-height: 45px;
     padding: 0;
 }
 
 li:not(:first-child) {
     margin-top: 24px;
-}
-
-#chapter-line {
-    height: 45px;
-    width: 4px;
-    background: var(--dark, black);
-    position: absolute;
-    top: 0;
-    transition: top 1s cubic-bezier(0.250, 0.000, 0.150, 1.000);
 }
 </style>
