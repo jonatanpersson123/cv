@@ -48,7 +48,7 @@ p {
 }
 
 .element-info {
-    max-width: 240px;
+    max-width: 390px;
 }
 
 .description {

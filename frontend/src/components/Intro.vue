@@ -51,6 +51,10 @@ h2 {
     margin: 0;
 }
 
+section {
+    padding: unset;
+}
+
 #intro {
     /* display: none; */
 }

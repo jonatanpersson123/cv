@@ -46,14 +46,7 @@ export default {
 </script>
 
 <style scoped>
-section {
-    height: 100%;
-    overflow: auto;
-    padding-top: 48px;
-    padding-left: 64px;
-}
-
-.timeline-elements {
-    margin-left: 64px;
+#experience {
+    margin-bottom: 130px;
 }
 </style>

@@ -5,8 +5,8 @@
             <div id="content">
                 <intro></intro>
                 <experience></experience>
-                <!--<education></education>
-                <skills></skills> -->
+                <education></education>
+                <!-- <skills></skills> -->
             </div>
         </div>
     </div>
@@ -14,14 +14,16 @@
 
 <script>
 import Navigation from './Navigation'
-import Experience from './Experience'
 import Intro from './Intro'
+import Experience from './Experience'
+import Education from './Education'
     export default {
         name: 'CV',
         components: {
+            Navigation,
             Intro,
             Experience,
-            Navigation
+            Education
         }
     }
 </script>

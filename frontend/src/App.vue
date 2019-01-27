@@ -51,6 +51,14 @@ p {
   font-size: 16px;
 }
 
+section {
+  height: 100%;
+  overflow: auto;
+  padding-top: 48px;
+  padding-left: 64px;
+  padding-right: 100px;
+}
+
 .flex {
   display: flex;
 }

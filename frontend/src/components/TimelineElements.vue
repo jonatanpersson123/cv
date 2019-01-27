@@ -1,6 +1,5 @@
 <template>
-
-    <v-timeline dense align-top>
+    <v-timeline dense align-top class="timeline-elements">
     <v-timeline-item
       v-for="(elementData, index) in elementsData"
       :key="index"
@@ -26,8 +25,8 @@ export default {
 
 <style scoped>
 
-.timeline {
-    width: 180px;
+.timeline-elements {
+    margin-left: 64px;
 }
 
 .v-timeline {
