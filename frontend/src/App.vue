@@ -41,8 +41,22 @@ body {
 
 }
 
+h1 {
+  color: #363636;
+  font-size: 72px;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 16px;
+}
+
 .flex {
   display: flex;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 </style>

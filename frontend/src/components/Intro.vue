@@ -1,9 +1,9 @@
 <template>
-    <section class="flex">
+    <section id="intro" class="flex">
         <intro-portrait></intro-portrait>
         <div class="intro-content">
             <div>
-                <h1>Jonatan Persson</h1>
+                <h1 class="large">Jonatan Persson</h1>
                 <h2>Software developer</h2>
                 <icon-button-list :buttonList="buttonList"></icon-button-list>
             </div>
@@ -37,10 +37,8 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-    font-family: Avenir-Heavy;
+h1.large {
     font-size: 90px;
-    color: #363636;
     margin: 0;
     line-height: 1;
 }
@@ -51,6 +49,10 @@ h2 {
     font-weight: initial;
     color: #363636;
     margin: 0;
+}
+
+#intro {
+    /* display: none; */
 }
 
 .intro-description {

@@ -1,29 +1,34 @@
 <template>
     <div>
-        <div id="content">
+        <div id="main-area">
             <navigation></navigation>
-            <Intro></Intro>
-        <!-- <experience></experience>
-        <education></education>
-        <skills></skills> -->
+            <div id="content">
+                <intro></intro>
+                <experience></experience>    
+                <!--<education></education>
+                <skills></skills> -->
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import Navigation from './Navigation'
+import Experience from './Experience'
 import Intro from './Intro'
     export default {
         name: 'CV',
         components: {
             Intro,
+            Experience,
             Navigation
         }
     }
 </script>
 
 <style scoped>
-#content {
+
+#main-area {
     background: white;
     max-width: 1200px;
     height: 700px;
@@ -33,6 +38,14 @@ import Intro from './Intro'
     bottom: 0;
     right: 0;
     left: 0;
+    overflow: hidden;
     box-shadow: 0 15px 30px hsla(0,0%,0%,.2);
 }
+
+#content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 </style>

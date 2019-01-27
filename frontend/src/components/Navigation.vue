@@ -1,28 +1,31 @@
 <template>
-    <div class="navigator">
-        <div id="prev-container" class="prev">
-            <v-scroll-x-transition>
-                <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle" @click.native="goToPrev()"></navigation-button>
-            </v-scroll-x-transition>
-        </div>
+    <div id="nav-container">
+        <div class="navigator">
+            <div id="prev-container" class="prev">
+                <v-scroll-x-transition>
+                    <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle" @click.native="goToPrev()"></navigation-button>
+                </v-scroll-x-transition>
+            </div>
 
-        <nav>
-            <ul>
-                <li v-for="chapter in this.chapters" :key="chapter.id"
-                    :class="{active: chapter === currentChapter}"
-                    @click="updateCurrentChapter(chapter)">
-                    {{chapter.chapterNumber}}
-                </li>
-            </ul>
-            <div ref="line" id="chapter-line"></div>
-        </nav>
+            <nav>
+                <ul>
+                    <li v-for="chapter in this.chapters" :key="chapter.id"
+                        :class="{active: chapter === currentChapter}"
+                        @click="updateCurrentChapter(chapter)">
+                        {{chapter.chapterNumber}}
+                    </li>
+                </ul>
+                <div ref="line" id="chapter-line"></div>
+            </nav>
 
-        <div id="next-container" class="next">
-            <v-scroll-x-transition>
-                <navigation-button v-if="nextChapter" :isNext="true" :chapterText="nextChapter.chapterTitle" @click.native="goToNext()"></navigation-button>
-            </v-scroll-x-transition>
+            <div id="next-container" class="next">
+                <v-scroll-x-transition>
+                    <navigation-button v-if="nextChapter" :isNext="true" :chapterText="nextChapter.chapterTitle" @click.native="goToNext()"></navigation-button>
+                </v-scroll-x-transition>
+            </div>
         </div>
     </div>
+    
 </template>
 
 <script>
@@ -57,6 +60,7 @@ export default {
     methods: {
         ...mapMutations(['updateCurrentChapter']),
         goToNext() {
+            this.$vuetify.goTo(99999, null)
             this.updateCurrentChapter(this.nextChapter)
         },
         goToPrev() {
@@ -81,6 +85,12 @@ export default {
 nav {
     position: relative;
     flex: 1;
+}
+
+#nav-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 #next-container {

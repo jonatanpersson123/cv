@@ -1,7 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
+
+var VueScrollTo = require('vue-scrollto')
+
+var options = {
+    container: '#content',
+    easing: 'ease',
+    force: true,
+    cancelable: true,
+    onStart: function(element) {
+    },
+    onDone: function(element) {
+    },
+    onCancel: function() {
+    },
+    x: false,
+    y: true
+}
 
 const chapters = [
     { id: 1, chapterNumber: '01', chapterTitle: 'Intro' },
@@ -22,6 +38,7 @@ const initStore = () =>
     mutations: {
       updateCurrentChapter(state, newChapter) {
         state.currentChapter = newChapter
+        VueScrollTo.scrollTo(document.getElementById(newChapter.chapterTitle.toLowerCase()), 750, options)
       }
     },
 
