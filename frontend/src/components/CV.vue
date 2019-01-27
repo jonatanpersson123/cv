@@ -4,7 +4,7 @@
             <navigation></navigation>
             <div id="content">
                 <intro></intro>
-                <experience></experience>    
+                <experience></experience>
                 <!--<education></education>
                 <skills></skills> -->
             </div>
