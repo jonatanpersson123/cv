@@ -24,7 +24,7 @@ export default {
             developmentList: [
                 { icon: 'brands/js-square', text: 'JavaScript', link: '' },
                 { icon: 'brands/vuejs', text: 'Vue.js', link: '' },
-                { icon: 'brands/angular', text: 'Angular', link: ''},
+                { icon: 'brands/angular', text: 'Angular', link: '' },
                 { icon: 'brands/react', text: 'React', link: '' },
                 { icon: 'brands/html5', text: 'HTML', link: '' },
                 { icon: 'brands/css3', text: 'CSS', link: '' },
@@ -34,12 +34,12 @@ export default {
                 { icon: 'code', text: 'Cordova', link: '' },
                 { icon: 'brands/php', text: 'PHP', link: '' },
                 { icon: 'code', text: 'GIT', link: '' },
-                { icon: 'code', text: 'SQL', link: '' },
+                { icon: 'code', text: 'SQL', link: '' }
             ],
             designList: [
                 { icon: 'brands/sketch', text: 'Sketch', link: '' },
                 { icon: 'brands/invision', text: 'Invision', link: '' },
-                { icon: 'brands/adobe', text: 'Photoshop', link: '' },
+                { icon: 'brands/adobe', text: 'Photoshop', link: '' }
             ]
         }
     }

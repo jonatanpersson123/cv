@@ -15,7 +15,7 @@
         props: {
          buttonList: Array,
          showButtonText: false
-        }, 
+        },
         components: {}
     }
 </script>
