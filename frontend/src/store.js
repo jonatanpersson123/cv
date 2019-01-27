@@ -8,7 +8,7 @@ var options = {
     container: '#content',
     easing: 'ease',
     force: true,
-    cancelable: true,
+    cancelable: false,
     onStart: function(element) {
     },
     onDone: function(element) {
