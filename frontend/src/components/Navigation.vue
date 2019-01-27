@@ -1,5 +1,5 @@
 <template>
-    <div id="nav-container">
+    <div id="full-container">
         <div class="navigator">
             <div id="prev-container" class="prev">
                 <v-scroll-x-transition>
@@ -86,7 +86,7 @@ nav {
     flex: 1;
 }
 
-#nav-container {
+#full-container {
     position: absolute;
     height: 100%;
     width: 100%;
