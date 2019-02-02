@@ -1,6 +1,6 @@
 <template>
     <div id="full-container">
-        <div class="navigator">
+        <div class="navigator animated fadeIn delay-2000">
             <div id="prev-container" class="prev">
                 <v-scroll-x-transition>
                     <navigation-button v-if="prevChapter" :isNext="false" :chapterText="prevChapter.chapterTitle" @click.native="goToPrev()"></navigation-button>
@@ -12,10 +12,13 @@
                     <li v-for="chapter in this.chapters" :key="chapter.id"
                         :class="{active: chapter === currentChapter}"
                         @click="updateCurrentChapter(chapter)">
-                        {{chapter.chapterNumber}}
+                        <div class="chapter-info">
+                            <div class="chapter-title">{{chapter.chapterTitle}}</div>
+                            <span>{{chapter.chapterNumber}}</span>
+                        </div>
                     </li>
                 </ul>
-                <div ref="line" id="chapter-line"></div>
+                <div ref="line" id="current-chapter-line"></div>
             </nav>
 
             <div id="next-container" class="next">
@@ -106,12 +109,13 @@ nav {
     justify-content: flex-start;
 }
 
-#chapter-line {
+#current-chapter-line {
     height: 45px;
     width: 4px;
     background: var(--dark, black);
     position: absolute;
     top: 0;
+    right: 50px;
     transition: top .5s cubic-bezier(0.250, 0.000, 0.150, 1.000);
 }
 
@@ -123,13 +127,30 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 100;
+}
+
+.chapter-info {
+    display: flex;
+    justify-content: flex-end;
+}
+
+li.active .chapter-info .chapter-title, li:hover .chapter-title {
+    opacity: 1;
+}
+
+.chapter-title {
+    margin-right: 32px;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity .75s cubic-bezier(0.250, 0.000, 0.150, 1.000);
+
 }
 
 ul {
     margin: 0;
-    padding-left: 8px;
+    padding: 0;
     list-style: none;
-    width: 60px;
 }
 
 li {
@@ -149,6 +170,7 @@ li.active {
     line-height: 45px;
     padding: 0;
 }
+
 
 li:not(:first-child) {
     margin-top: 24px;
