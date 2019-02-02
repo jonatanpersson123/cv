@@ -1,15 +1,19 @@
 <template>
     <section id="intro" class="flex">
-        <intro-portrait></intro-portrait>
-        <div class="intro-content">
+        <intro-portrait class="animated fadeIn delay-2000"></intro-portrait>
+        <div class="intro-content slide-up">
             <div>
-                <h1 class="large">Jonatan Persson</h1>
-                <h2>Software developer</h2>
-                <icon-button-list :buttonList="buttonList"></icon-button-list>
+                <div class="animated fadeInRight delay-250">
+                    <h1 class="large">Jonatan Persson</h1>
+                    <h2>Software developer</h2>
+                </div>
+                <icon-button-list class="animated fadeIn delay-2000" :buttonList="buttonList"></icon-button-list>
             </div>
-            <div>
-                <p class="intro-description">Nice to meet you traveller! I would have shook your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in UX.</p>
-                <p class="intro-description bottom">Currently located in soutern part of Sweden.</p>
+            <div class="intro-description animated fadeIn delay-2000">
+                <p class="description-header">Hi!</p>
+                <p class="description-top">Nice to meet you traveller. I would have shook your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in</p>
+                <word-ticker :wordList="wordList"></word-ticker>
+                <p class="description-bottom">Currently located in soutern part of Sweden.</p>
             </div>
         </div>
     </section>
@@ -18,19 +22,22 @@
 <script>
 import IntroPortrait from './IntroPortrait'
 import IconButtonList from './IconButtonList'
+import WordTicker from './WordTicker'
 export default {
     name: 'Intro',
     components: {
         IntroPortrait,
-        IconButtonList
+        IconButtonList,
+        WordTicker
     },
     data() {
         return {
             buttonList: [
-                { icon: 'regular/envelope', text: 'Email', link: '' },
-                { icon: 'phone', text: 'Phone', link: '', scale: 1.5 },
-                { icon: 'brands/github', text: 'Github', link: '', scale: 2 }
-            ]
+                { icon: 'regular/envelope', text: 'Email', link: 'mailto:jonatanpersson123@gmail.com' },
+                { icon: 'phone', text: 'Phone', scale: 1.5, link: 'tel:0046708853878' },
+                { icon: 'brands/github', text: 'Github', scale: 2, link: 'https://github.com/jonatanpersson123' }
+            ],
+            wordList: ['eHealth.', 'user experience.', 'performance.', 'food.', 'sports.', 'simplicity.', 'user interaction.', 'optimization.', 'adventures.']
         }
     }
 }
@@ -51,6 +58,10 @@ h2 {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 section {
     padding: unset;
 }
@@ -60,20 +71,29 @@ section {
 }
 
 .intro-description {
-    margin: 0;
     font-size: 18px;
-    max-width: 550px;
+    max-width: 485px;
 }
 
 .intro-content {
-    margin: 80px 32px;
+    margin: 200px 32px 80px 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
 }
 
-.bottom {
-    margin-top: 20px;
+.description-header {
+    font-size: 26px;
+    margin-bottom: 8px;
 }
+
+.description-top {
+    display: inline;
+}
+
+.description-bottom {
+    margin-top: 10px;
+}
+
 </style>
