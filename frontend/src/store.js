@@ -38,7 +38,7 @@ const initStore = () =>
     mutations: {
       updateCurrentChapter(state, newChapter) {
         state.currentChapter = newChapter
-        VueScrollTo.scrollTo(document.getElementById(newChapter.chapterTitle.toLowerCase()), 750, options)
+        VueScrollTo.scrollTo(document.getElementById(newChapter.chapterTitle.toLowerCase()), 650, options)
       }
     },
 
