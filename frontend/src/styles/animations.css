@@ -1,0 +1,83 @@
+.animated { 
+    animation-duration: .8s; 
+    animation-fill-mode: both; 
+    animation-timing-function: ease-in-out; 
+}
+
+.delay-250 {
+    animation-delay: 250ms
+}
+
+.delay-500 {
+    animation-delay: 500ms
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+.delay-2000 {
+    animation-delay: 2s;
+}
+
+.delay-3000 {
+    animation-delay: 3s;
+}
+
+.slide-up {
+    animation: slide-up 1.25s;
+    animation-delay: 1.25s;
+    -webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes slide-up
+{
+    from {margin-top: 200px;} 
+    to {margin-top: 80px;} 
+}
+
+.fadeIn { 
+    animation-name: fadeIn; 
+}
+
+@keyframes fadeIn { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+}
+
+.fadeInRight { 
+    -webkit-animation-name: fadeInRight; 
+    animation-name: fadeInRight; 
+}
+
+@keyframes fadeInRight { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(60px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    } 
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -8,6 +8,7 @@
 
 <script>
 import Cv from './components/CV'
+import "./styles/animations.css"
 export default {
   name: 'App',
   components: {
@@ -17,19 +18,8 @@ export default {
 </script>
 
 <style>
-
 body {
     height: 100vh;
-}
-
-@font-face {
-  font-family: "TodaySB-Medium";
-  src: url("assets/fonts/TodaySB-Medium.otf");
-}
-
-@font-face {
-  font-family: "OpenSans-Regular";
-  src: url("assets/fonts/OpenSans-Regular.ttf");
 }
 
 #app {
