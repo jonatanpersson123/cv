@@ -39,6 +39,7 @@ export default {
 
 .v-timeline-item {
     padding-bottom: 36px;
+    max-width: 860px;
 }
 
 </style>
