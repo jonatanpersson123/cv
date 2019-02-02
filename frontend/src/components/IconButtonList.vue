@@ -1,7 +1,7 @@
 <template>
     <div class="icons">
         <div class="icon-button" :class="{'icon-button-text': showButtonText}" v-for="(item, index) in buttonList" :key="index">
-            <v-btn fab color="primary">
+            <v-btn fab color="primary" :href="item.link" target="_blank">
                 <v-icon :scale="item.scale || 2" :name="item.icon"/>
             </v-btn>
             <span v-if="showButtonText">{{item.text}}</span>
