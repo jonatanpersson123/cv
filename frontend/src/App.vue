@@ -31,6 +31,20 @@ body {
 
 }
 
+/* TODO - Move to global */
+a {
+  display: inline-block;
+  background-image: linear-gradient(var(--dark, black), var(--dark, black));
+  background-size: 0 3px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+a:hover {
+  background-size: 100% 3px, auto;
+}
+
 h1 {
   color: #363636;
   font-size: 72px;
