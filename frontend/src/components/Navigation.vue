@@ -41,6 +41,7 @@ export default {
     },
     data() {
         return {
+            scrolling: false
         }
     },
     computed: {
@@ -62,14 +63,20 @@ export default {
     methods: {
         ...mapMutations(['updateCurrentChapter']),
         goToNext() {
-            this.$vuetify.goTo(99999, null)
-            this.updateCurrentChapter(this.nextChapter)
+            this.scrollToChapter(this.nextChapter)
         },
         goToPrev() {
-            this.updateCurrentChapter(this.prevChapter)
+            this.scrollToChapter(this.prevChapter)
         },
         gotoPage(chapter) {
-            this.updateCurrentChapter(chapter)
+            this.scrollToChapter(chapter)
+        },
+        scrollToChapter(scrollToChapter) {
+            if (!this.scrolling) {
+                this.scrolling = true
+                this.updateCurrentChapter(scrollToChapter)
+                setTimeout(() => this.scrolling = false, 750)
+            }
         },
         getChapterPosition(chapter) {
             return this.chapters.indexOf(chapter)
@@ -144,7 +151,6 @@ li.active .chapter-info .chapter-title, li:hover .chapter-title {
     font-size: 20px;
     opacity: 0;
     transition: opacity .75s cubic-bezier(0.250, 0.000, 0.150, 1.000);
-
 }
 
 ul {
@@ -170,7 +176,6 @@ li.active {
     line-height: 45px;
     padding: 0;
 }
-
 
 li:not(:first-child) {
     margin-top: 24px;
