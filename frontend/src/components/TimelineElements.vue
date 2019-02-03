@@ -6,7 +6,7 @@
       fill-dot
       small
     >
-        <timeline-element-entry :elementData="elementData"></timeline-element-entry>
+        <timeline-element-entry :elementData="elementData" :typeIcon="typeIcon"></timeline-element-entry>
     </v-timeline-item>
   </v-timeline>
 
@@ -16,7 +16,7 @@
 import TimelineElementEntry from './TimelineElementEntry'
 export default {
     name: 'TimelineElements',
-    props: ['elementsData'],
+    props: ['elementsData', 'typeIcon'],
     components: {
         TimelineElementEntry
     }
@@ -38,7 +38,7 @@ export default {
 }
 
 .v-timeline-item {
-    padding-bottom: 36px;
+    padding-bottom: 28px;
     max-width: 860px;
 }
 

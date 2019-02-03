@@ -1,9 +1,12 @@
 <template>
     <div class="element flex">
         <div class="element-info">
-            <h3>{{elementData.title}}</h3>
-            <h4>{{elementData.type}}</h4>
-            <timeline-element-entry-location :location="elementData.location"></timeline-element-entry-location>
+            <a class="link" :href="elementData.link" target="_blank">
+                <h3>{{elementData.title}}</h3>
+            </a>
+            <timeline-element-entry-info icon="clock" :text="elementData.time"></timeline-element-entry-info>
+            <timeline-element-entry-info :icon="typeIcon" :text="elementData.type"></timeline-element-entry-info>
+            <timeline-element-entry-info icon="map-marker-alt" :text="elementData.location"></timeline-element-entry-info>
             <p class="description">{{elementData.description}}</p>
         </div>
 
@@ -14,20 +17,30 @@
 </template>
 
 <script>
-import TimelineElementEntryLocation from './TimelineElementEntryLocation'
+import TimelineElementEntryInfo from './TimelineElementEntryInfo'
 import TimelineElementEntryTask from './TimelineElementEntryTask'
 export default {
     name: 'TimelineElementEntry',
-    props: ['elementData'],
+    props: {
+        elementData: Object,
+        typeIcon: String
+    },
     components: {
-        TimelineElementEntryLocation,
+        TimelineElementEntryInfo,
         TimelineElementEntryTask
     }
 }
 </script>
 
 <style scoped>
+
+.link {
+    max-width: 300px;
+    margin-bottom: 8px;
+}
+
 h3 {
+    display: inline-block;
     font-size: 22px;
     color: #363636;
     text-transform: uppercase;
