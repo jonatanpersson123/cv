@@ -1,9 +1,12 @@
 <template>
     <div class="icons">
         <div class="icon-button" :class="{'icon-button-text': showButtonText}" v-for="(item, index) in buttonList" :key="index">
-            <v-btn fab color="primary" :href="item.link" target="_blank">
-                <v-icon :scale="item.scale || 2" :name="item.icon"/>
-            </v-btn>
+            <v-tooltip bottom :disabled="!showTooltip">
+                <v-btn fab color="primary" :href="item.link" slot="activator">
+                    <v-icon :scale="item.scale || 2" :name="item.icon"/>
+                </v-btn>
+                <span>{{item.text}}</span>
+            </v-tooltip>
             <span v-if="showButtonText">{{item.text}}</span>
         </div>
     </div>
@@ -14,7 +17,8 @@
         name: 'IconButtonList',
         props: {
          buttonList: Array,
-         showButtonText: false
+         showButtonText: false,
+         showTooltip: false
         },
         components: {}
     }

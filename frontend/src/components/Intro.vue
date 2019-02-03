@@ -7,7 +7,7 @@
                     <h1 class="large">Jonatan Persson</h1>
                     <h2>Software developer</h2>
                 </div>
-                <icon-button-list class="animated fadeIn delay-2000" :buttonList="buttonList"></icon-button-list>
+                <icon-button-list class="animated fadeIn delay-2000" :buttonList="buttonList" :showTooltip="true"></icon-button-list>
             </div>
             <div class="intro-description animated fadeIn delay-2000">
                 <p class="description-header">Hi!</p>
@@ -33,9 +33,9 @@ export default {
     data() {
         return {
             buttonList: [
-                { icon: 'regular/envelope', text: 'Email', link: 'mailto:jonatanpersson123@gmail.com' },
-                { icon: 'phone', text: 'Phone', scale: 1.5, link: 'tel:0046708853878' },
-                { icon: 'brands/github', text: 'Github', scale: 2, link: 'https://github.com/jonatanpersson123' }
+                { icon: 'regular/envelope', text: 'jonatanpersson123@gmail.com', link: 'mailto:jonatanpersson123@gmail.com' },
+                { icon: 'phone', text: '+46708853878', scale: 1.5, link: 'tel:0046708853878' },
+                { icon: 'brands/github', text: 'github.com/jonatanpersson123', scale: 2, link: 'https://github.com/jonatanpersson123' }
             ],
             wordList: ['eHealth.', 'user experience.', 'performance.', 'food.', 'sports.', 'simplicity.', 'user interaction.', 'optimization.', 'adventures.']
         }
