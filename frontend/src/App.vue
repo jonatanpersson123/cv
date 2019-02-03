@@ -8,7 +8,7 @@
 
 <script>
 import Cv from './components/CV'
-import "./styles/animations.css"
+import './styles/animations.css'
 export default {
   name: 'App',
   components: {
