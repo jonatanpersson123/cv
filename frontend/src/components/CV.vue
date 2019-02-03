@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="main-area">
+        <div id="main-area" class="rise delay-250">
             <navigation></navigation>
             <div id="content">
                 <intro></intro>
@@ -33,7 +33,7 @@ import Skills from './Skills'
 <style scoped>
 
 #main-area {
-    background: white;
+    background-color: gray;
     max-width: 1200px;
     height: 700px;
     margin: auto;
