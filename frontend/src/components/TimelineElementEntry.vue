@@ -4,7 +4,7 @@
             <a class="link" :href="elementData.link" target="_blank">
                 <h3>{{elementData.title}}</h3>
             </a>
-            <timeline-element-entry-info icon="clock" :text="elementData.time"></timeline-element-entry-info>
+            <timeline-element-entry-info :icon="clock" :text="elementData.time"></timeline-element-entry-info>
             <timeline-element-entry-info :icon="typeIcon" :text="elementData.type"></timeline-element-entry-info>
             <timeline-element-entry-info icon="map-marker-alt" :text="elementData.location"></timeline-element-entry-info>
             <p class="description">{{elementData.description}}</p>
@@ -19,6 +19,7 @@
 <script>
 import TimelineElementEntryInfo from './TimelineElementEntryInfo'
 import TimelineElementEntryTask from './TimelineElementEntryTask'
+
 export default {
     name: 'TimelineElementEntry',
     props: {
@@ -28,6 +29,11 @@ export default {
     components: {
         TimelineElementEntryInfo,
         TimelineElementEntryTask
+    },
+    data() {
+        return {
+            clock: require('../assets/icons/clock.svg')
+        }
     }
 }
 </script>
@@ -36,7 +42,6 @@ export default {
 
 .link {
     max-width: 300px;
-    margin-bottom: 8px;
 }
 
 h3 {

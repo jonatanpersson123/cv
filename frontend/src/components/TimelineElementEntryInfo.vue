@@ -1,7 +1,8 @@
 <template>
     <div class="info-container flex">
         <div class="info-icon">
-            <v-icon :name="icon" scale="1.5" />
+            <img v-if="icon.includes('data:image')" :src="icon">
+            <v-icon v-else :name="icon" scale="1.5" />
         </div>
         <span>{{text}}</span>
     </div>
