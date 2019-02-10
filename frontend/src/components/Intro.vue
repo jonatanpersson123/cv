@@ -1,7 +1,7 @@
 <template>
     <section id="intro" class="flex">
         <intro-portrait class="animated fadeIn delay-2000"></intro-portrait>
-        <div class="intro-content slide-up">
+        <div class="intro-content slideUp">
             <div>
                 <div class="animated fadeInRight delay-250">
                     <h1 class="large">Jonatan Persson</h1>
@@ -33,8 +33,8 @@ export default {
     data() {
         return {
             buttonList: [
-                { icon: 'regular/envelope', text: 'jonatanpersson123@gmail.com', link: 'mailto:jonatanpersson123@gmail.com' },
-                { icon: 'phone', text: '+46708853878', scale: 1.5, link: 'tel:0046708853878' },
+                { icon: 'regular/envelope', text: 'jonatanpersson123@gmail.com', link: 'mailto:jonatanpersson123@gmail.com', openSelf: true },
+                { icon: 'phone', text: '+46708853878', scale: 1.5, link: 'tel:0046708853878', openSelf: true },
                 { icon: 'brands/github', text: 'github.com/jonatanpersson123', scale: 2, link: 'https://github.com/jonatanpersson123' }
             ],
             wordList: ['eHealth.', 'user experience.', 'performance.', 'food.', 'sports.', 'simplicity.', 'user interaction.', 'optimization.', 'adventures.']
