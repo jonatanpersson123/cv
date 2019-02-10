@@ -42,14 +42,14 @@
     }
 }
 
-.slide-up {
-    animation: slide-up 1.25s;
+.slideUp {
+    animation: slideUp 1.25s;
     animation-delay: 1.25s;
     -webkit-animation-fill-mode: forwards;
 
 }
 
-@keyframes slide-up
+@keyframes slideUp
 {
     0% {
         margin-top: 200px;

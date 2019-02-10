@@ -30,7 +30,7 @@ export default {
 }
 
 .v-timeline {
-    padding-top: 1px;
+    padding-top: 0;
 }
 
 .v-timeline::before {
