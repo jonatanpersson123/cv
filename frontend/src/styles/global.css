@@ -1,0 +1,62 @@
+body {
+    height: 100vh;
+}
+
+a {
+    display: inline-block;
+    background-image: linear-gradient(var(--primary-dark, black), var(--primary-dark, black));
+    background-size: 0 3px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
+}
+  
+a:hover {
+    background-size: 100% 3px, auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+p {
+    font-size: 16px;
+}
+
+section {
+    height: 100%;
+    overflow: auto;
+    padding-top: 48px;
+    padding-left: 64px;
+    padding-right: 100px;
+    scrollbar-width: none;
+}
+
+section.section-md {
+    height: unset;
+    overflow: unset;
+    min-height: 100vh;
+}
+
+section.section-sm {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+h1 {
+    color: var(--primary-dark, gray);
+    font-size: 72px;
+    margin-bottom: 24px;
+}
+
+h1.h1-sm {
+    font-size: 48px;
+}
+
+.flex {
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

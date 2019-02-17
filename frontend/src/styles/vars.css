@@ -1,0 +1,9 @@
+:root {
+    --primary-dark: #363636;
+    --secondary: lightslategray;
+    --background-gray: lightgray;
+    
+    --spacing-sm: 1rem;
+    --spacing-md: 2.5rem;
+    --spacing-lg: 3.5rem;
+}
