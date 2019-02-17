@@ -1,5 +1,5 @@
 <template>
-    <div class="element flex">
+    <div class="element flex" :class="{'mdDown': $vuetify.breakpoint.mdAndDown}">
         <div class="element-info">
             <a class="link" :href="elementData.link" target="_blank">
                 <h3>{{elementData.title}}</h3>
@@ -47,13 +47,13 @@ export default {
 h3 {
     display: inline-block;
     font-size: 22px;
-    color: #363636;
+    color: var(--primary-dark, gray);
     text-transform: uppercase;
 }
 
 h4 {
     font-size: 16px;
-    color: #363636;
+    color: var(--primary-dark, gray);
     font-weight: initial;
 }
 
@@ -63,6 +63,14 @@ p {
 
 .element {
     margin-top: 9px;
+}
+
+.element.mdDown {
+    flex-direction: column;
+}
+
+.element.mdDown .tasks {
+    margin-left: 0;
 }
 
 .element-info {

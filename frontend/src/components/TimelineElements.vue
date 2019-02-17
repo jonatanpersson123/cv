@@ -1,5 +1,5 @@
 <template>
-    <v-timeline dense align-top class="timeline-elements">
+    <v-timeline dense align-top class="timeline-elements" :class="{'mdDown': $vuetify.breakpoint.mdAndDown}">
     <v-timeline-item
       v-for="(elementData, index) in elementsData"
       :key="index"
@@ -27,6 +27,10 @@ export default {
 
 .timeline-elements {
     margin-left: 64px;
+}
+
+.timeline-elements.mdDown {
+    margin-left: 0;
 }
 
 .v-timeline {

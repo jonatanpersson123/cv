@@ -24,6 +24,23 @@
     animation-delay: 3s;
 }
 
+.blendIn {
+    animation: blendIn;
+    animation-duration: 1.25s; 
+    animation-fill-mode: both; 
+    animation-timing-function: ease-in; 
+}
+
+@keyframes blendIn {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: var(--background-gray, gray);
+
+    }
+}
+
 .rise {
     animation: rise;
     animation-duration: 1.25s; 
@@ -33,11 +50,9 @@
 
 @keyframes rise {
     0% {
-        background-color: lightgray;
         box-shadow: none;
     }
     100% {
-        background-color: white;
         box-shadow: 0 15px 30px hsla(0,0%,0%,.2);
     }
 }

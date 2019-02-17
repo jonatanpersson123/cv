@@ -1,6 +1,6 @@
 <template>
-    <section id="experience">
-        <h1>Experience</h1>
+    <section id="experience" :class="{'section-md': $vuetify.breakpoint.mdAndDown, 'section-sm': $vuetify.breakpoint.smAndDown}">
+        <h1 :class="{'h1-sm': $vuetify.breakpoint.smAndDown}">Experience</h1>
         <timeline-elements class="timeline-elements" :elementsData="experienceList" typeIcon="user-tie"></timeline-elements>
     </section>
 </template>
@@ -54,6 +54,24 @@ export default {
                         'Deployed iOS and Android applications on App Store and Google Play.',
                         'Had close communication with customers and end users to receive valuable feedback.'
                     ]
+                },
+                {
+                    title: 'Magento E-Commerce',
+                    link: 'https://magento.com',
+                    time: 'May, 2016 - May, 2017',
+                    type: 'Frontend/Backend developer',
+                    location: 'Halmstad, Sweden',
+                    description: 'Development and deployment of various online shops.',
+                    taskList: []
+                },
+                {
+                    title: 'Celsa Steel Service',
+                    link: 'https://www.celsagroup.com',
+                    time: 'Aug, 2015 - May, 2016',
+                    type: 'Frontend/Backend developer',
+                    location: 'Halmstad, Sweden',
+                    description: 'System used for listing, detailing and ordering reinforcement products.',
+                    taskList: []
                 }
             ]
         }

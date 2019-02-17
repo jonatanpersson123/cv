@@ -39,6 +39,6 @@
 
 .chapter-text {
     font-weight: bold;
-    color: lightslategray;
+    color: var(--secondary, gray);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <section id="skills">
-        <h1>Skills</h1>
+    <section id="skills" :class="{'section-md': $vuetify.breakpoint.mdAndDown, 'section-sm': $vuetify.breakpoint.smAndDown}">
+        <h1 :class="{'h1-sm': $vuetify.breakpoint.smAndDown}">Skills</h1>
         <div id="development-skills" class="skill-container">
             <h2>Development</h2>
             <icon-button-list :buttonList="developmentList" :showButtonText="true"></icon-button-list>
@@ -53,9 +53,8 @@ export default {
 <style scoped>
 h2 {
     font-size: 20px;
-    color: #363636;
+    color: var(--primary-dark, gray);
     margin-bottom: 16px;
-    font-family: Avenir-Roman;
     font-weight: normal;
 }
 
@@ -65,5 +64,9 @@ h2 {
 
 .skill-container {
     max-width: 600px;
+}
+
+.section-md .skill-container {
+    max-width: 420px;
 }
 </style>

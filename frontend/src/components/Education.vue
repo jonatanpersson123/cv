@@ -1,6 +1,6 @@
 <template>
-    <section id="education">
-        <h1>Education</h1>
+    <section id="education" :class="{'section-md': $vuetify.breakpoint.mdAndDown, 'section-sm': $vuetify.breakpoint.smAndDown}">
+        <h1 :class="{'h1-sm': $vuetify.breakpoint.smAndDown}">Education</h1>
         <timeline-elements :elementsData="educationList" typeIcon="graduation-cap"></timeline-elements>
     </section>
 </template>
@@ -46,4 +46,7 @@ export default {
 </script>
 
 <style scoped>
+#education {
+    margin-bottom: 130px;
+}
 </style>

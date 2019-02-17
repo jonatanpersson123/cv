@@ -21,7 +21,7 @@
 <style scoped>
 span {
     font-size: 16px;
-    color: #363636;
+    color: var(--primary-dark, gray);
     margin-left: 8px;
 }
 
