@@ -6,6 +6,6 @@
 
 - [X] Implement pages for intro, experience, education and skills.
 - [X] Add animations
-- [] Load texts and entries from server, when implemented.
-- [] Implement design for mobile devices.
-- [] Add login for page content management.
+- [ ] Load texts and entries from server, when implemented.
+- [ ] Implement design for mobile devices.
+- [ ] Add login for page content management.
