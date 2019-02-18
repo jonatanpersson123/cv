@@ -12,7 +12,7 @@
             <intro-portrait v-if="$vuetify.breakpoint.mdAndDown" class="animated fadeIn delay-2000"></intro-portrait>
             <div class="intro-description animated fadeIn delay-2000">
                 <p class="description-header">Hi!</p>
-                <p class="description-top">Nice to meet you traveller. I would have shaken your hand if I could. If you don't already know me I would describe myself as a curious Swedish software developer with great interest in</p>
+                <p class="description-top">Nice to meet you traveller. I would have shaken your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in</p>
                 <word-ticker :wordList="wordList"></word-ticker>
                 <p class="description-bottom">Feel free to browse this resumé site to find out what I have been up to lately.</p>
             </div>
@@ -35,7 +35,7 @@ export default {
         return {
             buttonList: [
                 { icon: 'regular/envelope', text: 'jonatanpersson123@gmail.com', link: 'mailto:jonatanpersson123@gmail.com', openSelf: true },
-                { icon: 'phone', text: '+46708853878', scale: 1.5, link: 'tel:0046708853878', openSelf: true },
+                { icon: 'phone', text: '+46 708 85 38 678', scale: 1.5, link: 'tel:0046708853878', openSelf: true },
                 { icon: 'brands/github', text: 'github.com/jonatanpersson123', scale: 2, link: 'https://github.com/jonatanpersson123' }
             ],
             wordList: ['eHealth.', 'user experience.', 'graphic design.', 'simplicity.', 'food.', 'sports.', 'user interaction.', 'optimization.', 'adventures.']
@@ -90,6 +90,7 @@ section {
 
 .description-header {
     font-size: 26px;
+    font-weight: 500;
     margin-bottom: 8px;
 }
 
