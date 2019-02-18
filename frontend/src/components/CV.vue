@@ -40,7 +40,7 @@ import { scroll } from './mixins/scroll'
         methods: {
             ...mapMutations(['updateCurrentChapter']),
             onScroll(event) {
-                if(!this.isScrolling) {
+                if (!this.isScrolling) {
                     for (let ce of this.chapterElements.reverse()) {
                         if (this.mainArea.scrollTop >= ce.element.offsetTop - 100 && this.mainArea.scrollTop < ce.element.offsetTop - 100 + ce.element.offsetHeight) {
                             if (ce.chapter.id !== this.currentChapter.id) {
