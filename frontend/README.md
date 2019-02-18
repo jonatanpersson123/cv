@@ -8,4 +8,4 @@
 - [X] Add animations
 - [ ] Load texts and entries from server, when implemented.
 - [ ] Implement design for mobile devices.
-- [ ] Add login for page content management.
+- [ ] Add login for content management.
