@@ -81,7 +81,7 @@ section {
 }
 
 .intro-content {
-    margin: 200px 32px 70px 32px;
+    margin: 200px 32px 40px 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
