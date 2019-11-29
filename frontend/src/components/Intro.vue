@@ -24,6 +24,7 @@
 import IntroPortrait from './IntroPortrait'
 import IconButtonList from './IconButtonList'
 import WordTicker from './WordTicker'
+import EntriesService from '../services/EntriesService'
 export default {
     name: 'Intro',
     components: {
@@ -33,13 +34,18 @@ export default {
     },
     data() {
         return {
-            buttonList: [
-                { icon: 'regular/envelope', text: 'jonatanpersson123@gmail.com', link: 'mailto:jonatanpersson123@gmail.com', openSelf: true },
-                { icon: 'phone', text: '+46 708 85 38 678', scale: 1.5, link: 'tel:0046708853878', openSelf: true },
-                { icon: 'brands/github', text: 'github.com/jonatanpersson123', scale: 2, link: 'https://github.com/jonatanpersson123' }
-            ],
+            buttonList: [],
             wordList: ['eHealth.', 'user experience.', 'graphic design.', 'simplicity.', 'food.', 'sports.', 'user interaction.', 'optimization.', 'adventures.']
         }
+    },
+    methods: {
+        async setupIntroButtons () {
+            const response = await EntriesService.fetchButtons({ typeId: 1 })
+            this.buttonList = response.data.buttons
+        }
+    },
+    mounted() {
+        this.setupIntroButtons()
     }
 }
 </script>

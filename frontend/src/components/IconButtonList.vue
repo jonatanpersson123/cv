@@ -4,7 +4,7 @@
             <v-tooltip bottom :disabled="!showTooltip">
                 <v-btn fab color="primary" :href="item.link" :target="item.openSelf ? '_self' : '_blank'" slot="activator">
                     <img v-if="item.icon.includes('data:image')" :src="item.icon">
-                    <v-icon v-else :scale="item.scale || 2" :name="item.icon"/>
+                    <v-icon v-else :scale="item.scale || 1.5" :name="item.icon"/>
                 </v-btn>
                 <span>{{item.text}}</span>
             </v-tooltip>
