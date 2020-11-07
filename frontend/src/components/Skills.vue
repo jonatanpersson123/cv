@@ -30,13 +30,13 @@ export default {
     },
     data() {
         return {
+            developmentList: [],
+            designList: [],
             photoshopIcon: PhotoshopIcon,
             csharpIcon: CSharpIcon,
             webpackIcon: WebpackIcon,
             phpIcon: PHPIcon,
-            cordovaIcon: CordovaIcon,
-            developmentList: [],
-            designList: []
+            cordovaIcon: CordovaIcon
         }
     },
     methods: {

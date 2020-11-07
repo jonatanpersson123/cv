@@ -21,12 +21,12 @@
 
 .button-texts.prev {
     transform: rotate(90deg);
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 .button-texts.next {
     transform: rotate(270deg);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .button-texts span {

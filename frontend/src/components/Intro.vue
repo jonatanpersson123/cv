@@ -11,10 +11,10 @@
             </div>
             <intro-portrait v-if="$vuetify.breakpoint.mdAndDown" class="animated fadeIn delay-2000"></intro-portrait>
             <div class="intro-description animated fadeIn delay-2000">
-                <p class="description-header">Hi!</p>
-                <p class="description-top">Nice to meet you traveller. I would have shaken your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in</p>
+                <p class="description-header">{{profileHeader}}</p>
+                <p class="description-top">{{profileTextFirst}}</p>
                 <word-ticker :wordList="wordList"></word-ticker>
-                <p class="description-bottom">Feel free to browse this resumé site to find out what I have been up to lately.</p>
+                <p class="description-bottom">{{profileTextSecond}}</p>
             </div>
         </div>
     </section>
@@ -35,6 +35,9 @@ export default {
     data() {
         return {
             buttonList: [],
+            profileHeader: 'Hi!',
+            profileTextFirst: "Nice to meet you traveller. I would have shaken your hand if I could. If you don't already know me I would describe myself as a curious software developer with great interest in",
+            profileTextSecond: 'Feel free to browse this resumé site to find out what I have been up to lately.',
             wordList: ['eHealth.', 'user experience.', 'graphic design.', 'simplicity.', 'food.', 'sports.', 'user interaction.', 'optimization.', 'adventures.']
         }
     },
@@ -42,10 +45,20 @@ export default {
         async setupIntroButtons () {
             const response = await EntriesService.fetchButtons({ typeId: 1 })
             this.buttonList = response.data.buttons
+        },
+        async setupProfileInfo () {
+            const response = await EntriesService.fetchProfile()
+            const profileInfo = response.data.profile[0]
+            this.profileHeader = profileInfo.title
+            const profileText = profileInfo.text.split('/')
+            this.profileTextFirst = profileText[0]
+            this.profileTextSecond = profileText.length > 1 ? profileText[1] : ''
+            this.wordList = profileInfo.wordList.split('/')
         }
     },
     mounted() {
         this.setupIntroButtons()
+        this.setupProfileInfo()
     }
 }
 </script>
