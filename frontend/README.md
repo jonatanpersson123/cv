@@ -9,6 +9,7 @@
 - [X] Implement pages for intro, experience, education and skills.
 - [X] Implement design from sketches.
 - [X] Add base animations.
-- [ ] Load texts and entries from server, when implemented.
+- [X] Load texts and entries from server, when implemented.
 - [X] Implement design for mobile devices.
+- [ ] Load custom icons from database.
 - [ ] Add login for content management.
