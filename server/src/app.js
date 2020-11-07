@@ -1,11 +1,20 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const path = require('path')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const Button = require('./models/button')
+const Profile = require('./models/profile')
+const PORT = process.env.PORT || 5000
 
-mongoose.connect('mongodb://localhost:27017/entries')
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true },
+  () => { console.log('Connected to db') }
+)
+
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error'))
 db.once('open', () => {
@@ -13,6 +22,7 @@ db.once('open', () => {
 })
 
 const app = express()
+app.use(express.static(path.join(__dirname, '../../frontend/dist')))
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
@@ -48,4 +58,19 @@ app.get('/buttons/:typeId', (req, res) => {
   })
 })
 
-app.listen(process.env.PORT || 8081)
+app.get('/profiles', (req, res) => {
+  Profile.find({}, (error, profile) => {
+    if (error) {
+      console.error(error)
+    }
+    res.send(
+      { profile: profile }
+    )
+  })
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'))
+})
+
+app.listen(PORT)
