@@ -22,7 +22,7 @@ db.once('open', () => {
 })
 
 const app = express()
-app.use(express.static(path.join(__dirname, '../../frontend/dist')))
+app.use(express.static('public'))
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
@@ -70,7 +70,7 @@ app.get('/profiles', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'))
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
 app.listen(PORT)
